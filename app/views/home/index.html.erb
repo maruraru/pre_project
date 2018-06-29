@@ -1,0 +1,42 @@
+<head></head>
+<body>
+	<table id="main">
+		<tr>
+			<div class="header">
+				<td>
+				<p>HEADER</p>
+
+				<% if user_signed_in? %>
+    				<span>Welcome, <%= current_user.email %></span>
+    					<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+				<% else %>
+    				<%= link_to 'Sign in', new_user_session_path %>   <%= link_to 'Sign up', new_user_registration_path %>
+				<% end %>
+
+
+				<p><%= link_to 'All hotels', controller: 'hotels' %></p>
+				</td>
+			</div>
+		</tr>
+
+		<tr>
+			<div class="onsight">
+				<td>
+					<div class="review">
+						<p>Hotels as well</p>
+					</div>
+				</td>
+				<td>
+					<div class="topfive">
+						<p>Top</p>
+					</div>
+				</td>
+			</div>
+		</tr>
+		<tr>
+			<div class="footer">
+				<td><p>FOOTER</p></td>
+			</div>
+		</tr>
+	</table>
+</body>

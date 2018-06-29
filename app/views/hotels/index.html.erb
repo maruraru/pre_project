@@ -1,0 +1,39 @@
+<p><%= link_to 'Add hotel', new_hotel_path %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+ 
+  <% @hotels.each do |hotel| %>
+    <tr>
+      <td><%= image_tag hotel.photo.thumb.url %></td>
+      
+      <td>
+        <p><strong>Hotel: </strong><%= hotel.title %></p>
+        <p>Country: <%= hotel.location.country %></p>
+        <p>State: <%= hotel.location.state %></p>
+        <p>City: <%= hotel.location.city %></p>
+        <p>Street: <%= hotel.location.street %></p>
+        <p>House: <%= hotel.location.house %></p>
+
+
+          <% if hotel.breakfast? %>
+             <p><strong>Breakfast: </strong> yes</p>
+          <% else %>
+             <p><string>Breakfast: </string> no</p>
+          <% end %>
+      </td>
+
+
+      <td>
+        <p><%= link_to 'Show', hotel_path(hotel) %></p>
+        <p><%= link_to 'Edit', edit_hotel_path(hotel) %></p>
+      </td>
+    </tr>
+  <% end %>
+
+</table>
+<%= paginate @hotels %>
