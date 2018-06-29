@@ -1,4 +1,7 @@
-<p><%= link_to 'Add hotel', new_hotel_path %></p>
+<% if user_signed_in? %>
+  <p><%= link_to 'Add hotel', new_hotel_path %></p>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
@@ -30,7 +33,9 @@
 
       <td>
         <p><%= link_to 'Show', hotel_path(hotel) %></p>
-        <p><%= link_to 'Edit', edit_hotel_path(hotel) %></p>
+        <% if user_signed_in? %>
+          <p><%= link_to 'Edit', edit_hotel_path(hotel) %></p>
+        <% end %>
       </td>
     </tr>
   <% end %>

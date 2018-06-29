@@ -1,6 +1,6 @@
 class HotelsController < ApplicationController
 	
-	#before_filter :authenticate_user!, except => [:show, :index]
+	before_action :authenticate_user!, except:[:show, :index]
 
 
 	def index
