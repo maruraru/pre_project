@@ -37,7 +37,7 @@
   </p>
 <% end %>
 
-
+<% if user_signed_in? %>
 <h2>Add a comment:</h2>
 <%= form_with(model: [ @hotel, @hotel.comments.build ], local: true) do |form| %>
   <p><%= form.text_area :comment %></p>
@@ -45,8 +45,12 @@
     <%= form.submit %>
   </p>
 <% end %>
+<% end %>
 
 
 
-<p><%= link_to 'Edit', edit_hotel_path(@hotel) %></p>
+<% if user_signed_in? %>
+	<p><%= link_to 'Edit', edit_hotel_path(@hotel) %></p>
+<% end %>
+
 <p><%= link_to 'Return', hotels_path %></p>
