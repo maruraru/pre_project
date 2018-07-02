@@ -18,14 +18,9 @@
   <p><%= f.input :photo %></p>
   <p><strong>Breakfast: </strong><%= f.check_box :breakfast %></p>
 
-  <%= f.simple_fields_for :location do |p|%>
-    <p><%= p.input :country, :as => :string%></p>
-    <p><%= p.input :state %></p>
-    <p><%= p.input :city %></p>
-    <p><%= p.input :street %></p>
-    <p><%= p.input :house %></p>
-  <% end %>
+  <%= render 'locations/form', f: f %>
 
+  <!--
   <p><strong>Basic rating:</strong></p>
   <p>
     <%= f.radio_button :raiting, 1.0 , :checked => true %>
@@ -34,7 +29,7 @@
     <%= f.radio_button :raiting, 4.0 %>
     <%= f.radio_button :raiting, 5.0 %>
   </p>
-
+  
 
   <div id="add-rooms">
   <%= f.simple_fields_for :rooms do |ff| %>
@@ -52,7 +47,7 @@
   </div>
   </div>
 
-
+  -->
 
   <p><%= f.button :submit %></p>
 <% end %>

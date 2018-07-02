@@ -11,7 +11,7 @@
 <p>
 	<strong>Rating: </strong>
 	<% if @hotel.comments.any? %>
-	<%= (@hotel.raiting+@hotel.comments.average(:localrate))/2.0 %>
+	<%= @hotel.comments.average(:localrate) %>
 	<% else %>
 	<%= @hotel.raiting %>
 	<% end %>
@@ -31,7 +31,7 @@
   <p><string>Breakfast: </string> no</p>
 <% end %>
 
-
+<!--
 <% @hotel.rooms.each do |room| %>
   <p>
     <strong>Type of room:</strong>
@@ -48,46 +48,18 @@
     <%= room.description %>
   </p>
 <% end %>
-
+-->
 
 
 
 
 
 <h2>Comments</h2>
-<% @hotel.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.user.username %>
-    <p><%= image_tag comment.user.photo.ava.url %></p>
-  </p>
-
-  <p>
-  	<strong>Rating:</strong>
-  	<%= comment.localrate %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.comment %>
-  </p>
-<% end %>
-
+<%= render @hotel.comments %>
 
 <% if user_signed_in? %>
 <h2>Add a comment:</h2>
-<%= simple_form_for ([@hotel, @hotel.comments.build]) do |f| %>
-  <p>
-  	<strong>Rating: </strong>
-  	<%= f.radio_button :localrate, 1.0, :checked => true %>
-    <%= f.radio_button :localrate, 2.0 %>
-    <%= f.radio_button :localrate, 3.0 %>
-    <%= f.radio_button :localrate, 4.0 %>
-    <%= f.radio_button :localrate, 5.0 %>
-  </p>
-  <p><%= f.input :comment %></p>
-  <p><%= f.button :submit %></p>
-<% end %>
+<%= render 'comments/form' %>
 <% end %>
 
 

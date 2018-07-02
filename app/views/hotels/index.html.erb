@@ -19,7 +19,7 @@
         <p><strong>Hotel: </strong><%= hotel.title %></p>
         <p><strong>Rating: </strong>
           <% if hotel.comments.any? %>
-          <%= (hotel.raiting+hotel.comments.average(:localrate))/2.0 %>
+          <%= hotel.comments.average(:localrate) %>
           <% else %>
           <%= hotel.raiting %>
           <% end %>
