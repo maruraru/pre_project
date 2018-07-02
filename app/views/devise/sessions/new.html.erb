@@ -12,10 +12,9 @@
  					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
  					<div class="form-inputs">
  						<%= f.label :email  %><br>
-    					<%= f.text_field :email, required: false, autofocus: true, :class => 'form-control' %> <br>
-    					<small  class="form-text text-muted">We'll never share your email with anyone else.</small>
-						<%= f.label :password %><br>
-    					<%= f.text_field :password, required: false, :class => 'form-control'  %> <br>
+    					<%= f.email_field :email, required: false, autofocus: true, :class => 'form-control' %> <br>
+    					<%= f.label :password %><br>
+    					<%= f.password_field :password, required: false, :class => 'form-control'  %> <br>
  						<%= f.check_box :remember_me %>
  						<%= f.label :remember_me %>
  					</div>

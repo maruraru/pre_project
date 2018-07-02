@@ -1,3 +1,4 @@
+
 * {
 	margin: 0px;
 	padding: 0px;
@@ -81,7 +82,7 @@
 /*--------------------------------------------Slider----------------------------------------------*/
 
 .slider {
-	background-image: url(../images/slider.jpg);
+	background-image: url(slider.jpg);
 	width: 100%;
 	height: 500px;
 }
@@ -229,7 +230,7 @@ footer {
 }
 
 .EnterPageBg {
-	background-image: url(../images/signin.jpeg);
+	background-image: url(signin.jpeg);
 	width: 100%;
 	height: 700px;
 	background-repeat: repeat-x;
@@ -260,7 +261,7 @@ footer {
 /*-------------------------------------------------------Add hotel ----------------------*/
 
 .addHotel {
-	background-image: url(../images/addHotel.jpeg);
+	background-image: url(addHotel.jpeg);
 	width: 100%;
 	padding-top: 30px;
 }
@@ -279,7 +280,20 @@ footer {
 /*------------------------Registration Page-----------------------------------------------*/
 
 .regPageBg {
-	background-image: url(../images/signup.jpeg);
+	background-image: url(signup.jpeg);
 	width: 100%;
-	height: 700px;
+	height: 750px;
+}
+input[type="text"], textarea, input[type="number"]{
+	display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }

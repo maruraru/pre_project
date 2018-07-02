@@ -1,5 +1,7 @@
+<div class="addHotel">
+  <div class="addingForm">
 <%= simple_nested_form_for @hotel do |f| %>
-  
+  <h1>Adding form</h1>
   <% if @hotel.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -13,11 +15,24 @@
       </ul>
     </div>
   <% end %>
+            <div class="form-inputs">
+              <%= f.label :title   %><br>
+              <%= f.text_field :title, :class => 'form-control' %> <br>
+              <%= f.label :photo %><br>
+              <%= f.file_field:photo,  :class => 'form-control'  %> <br>
+            </div>
+
+
+
+
+
+
+<!--
 
   <p><%= f.input :title %></p>
   <p><%= f.input :photo %></p>
   <p><strong>Breakfast: </strong><%= f.check_box :breakfast %></p>
-
+-->
   <%= f.simple_fields_for :location do |p|%>
     <p><%= p.input :country, :as => :string%></p>
     <p><%= p.input :state %></p>
@@ -54,5 +69,7 @@
 
 
 
-  <p><%= f.button :submit %></p>
+  <p><%= f.button :submit, :class => 'btn btn-success'%></p>
 <% end %>
+</div>
+</div>
