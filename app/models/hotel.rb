@@ -4,6 +4,8 @@ class Hotel < ApplicationRecord
 
 	has_many :rooms, dependent: :destroy
 
+	attr_accessor :title, :rooms_attributes 
+
 	mount_uploader :photo, PhotoUploader
 	validates :title, presence: true, length: {in: 5..20}, uniqueness: true
 	validates :photo, presence: true

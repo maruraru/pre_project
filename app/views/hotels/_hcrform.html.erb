@@ -49,5 +49,20 @@
 
   -->
 
+  <h3>Rooms</h3>
+  <div id="rooms">
+    
+    <%= f.simple_fields_for :rooms do |room| %>
+      <%= render 'room_fields', f: room %>
+    <% end %>
+
+    <div class="links">
+      <%= link_to_add_association 'add room', f, :rooms %>
+    </div>
+
+  </div>
+
+
+
   <p><%= f.button :submit %></p>
 <% end %>

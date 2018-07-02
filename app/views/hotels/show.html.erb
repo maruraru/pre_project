@@ -13,7 +13,7 @@
 	<% if @hotel.comments.any? %>
 	<%= @hotel.comments.average(:localrate) %>
 	<% else %>
-	<%= @hotel.raiting %>
+	0
 	<% end %>
 </p>
 
