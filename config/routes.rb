@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 	get 'home/index'
 	resources :hotels do
 		resource :location
-		resources :comments
+		resources :comments, :rooms
+	
 	end
 	resources :users do
 		resources :comments

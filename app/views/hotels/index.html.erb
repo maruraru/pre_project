@@ -14,8 +14,16 @@
     <tr>
       <td><%= image_tag hotel.photo.thumb.url %></td>
       
+
       <td>
         <p><strong>Hotel: </strong><%= hotel.title %></p>
+        <p><strong>Rating: </strong>
+          <% if hotel.comments.any? %>
+          <%= (hotel.raiting+hotel.comments.average(:localrate))/2.0 %>
+          <% else %>
+          <%= hotel.raiting %>
+          <% end %>
+        </p>
         <p>Country: <%= hotel.location.country %></p>
         <p>State: <%= hotel.location.state %></p>
         <p>City: <%= hotel.location.city %></p>
@@ -29,7 +37,6 @@
              <p><string>Breakfast: </string> no</p>
           <% end %>
       </td>
-
 
       <td>
         <p><%= link_to 'Show', hotel_path(hotel) %></p>

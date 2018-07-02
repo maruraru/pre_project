@@ -17,6 +17,7 @@ class HotelsController < ApplicationController
 		@hotel = Hotel.new
 		@hotel.raiting=0.0;
 		@hotel.build_location
+		@hotel.rooms.build
 	end
 
 
@@ -49,6 +50,7 @@ end
 
 	private
   	def hotel_params
-   		params.require(:hotel).permit(:title, :photo, :breakfast, :raiting, location_attributes: [:country, :state, :city, :street, :house])
+   		params.require(:hotel).permit(:title, :photo, :breakfast, :raiting, location_attributes: [:country, :state, :city, :street, :house], rooms_attributes: [:id, :roomtype, :price, :description])
   	end
+
 end

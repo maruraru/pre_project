@@ -1,4 +1,4 @@
-<%= simple_form_for @hotel do |f| %>
+<%= simple_nested_form_for @hotel do |f| %>
   
   <% if @hotel.errors.any? %>
     <div id="error_explanation">
@@ -16,7 +16,7 @@
 
   <p><%= f.input :title %></p>
   <p><%= f.input :photo %></p>
-  <p><%= f.check_box :breakfast %></p>
+  <p><strong>Breakfast: </strong><%= f.check_box :breakfast %></p>
 
   <%= f.simple_fields_for :location do |p|%>
     <p><%= p.input :country, :as => :string%></p>
@@ -25,6 +25,34 @@
     <p><%= p.input :street %></p>
     <p><%= p.input :house %></p>
   <% end %>
+
+  <p><strong>Basic rating:</strong></p>
+  <p>
+    <%= f.radio_button :raiting, 1.0 , :checked => true %>
+    <%= f.radio_button :raiting, 2.0 %>
+    <%= f.radio_button :raiting, 3.0 %>
+    <%= f.radio_button :raiting, 4.0 %>
+    <%= f.radio_button :raiting, 5.0 %>
+  </p>
+
+
+  <div id="add-rooms">
+  <%= f.simple_fields_for :rooms do |ff| %>
+  <div class="roomsform">
+  <p><%= ff.input :roomtype %></p>
+  <p><%= ff.input :price %></p>
+  <p><%= ff.input :description %></p>
+  </div>
+  <% end %>
+
+  <div id="add-room"!>
+    <%= f.link_to_add :rooms do%>
+    <p><button type="button">Add room</button></p>
+    <% end %>
+  </div>
+  </div>
+
+
 
   <p><%= f.button :submit %></p>
 <% end %>
