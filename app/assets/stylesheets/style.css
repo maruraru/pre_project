@@ -1,0 +1,221 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px; }
+
+.contain {
+  width: 1170px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.header {
+  text-align: center;
+  height: 80px;
+  margin-top: 20px; }
+  .header a {
+    line-height: 1;
+    display: inline-block;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding-left: 15px; }
+  .header a:after {
+    background-color: gray;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out; }
+  .header a:hover:after,
+  .header a:focus:after {
+    width: 100%; }
+
+#logo {
+  width: 200px; }
+
+/*---------------------------------------------------------------Buttons-------------------*/
+.btnReg {
+  border-color: #097718;
+  color: #097718;
+  background-color: #fff; }
+
+/*-------------------------------------search----------------------------------------------------*/
+.description {
+  color: white;
+  text-align: center;
+  padding-top: 150px; }
+  .description h1 {
+    font-weight: bold;
+    font-size: 40px; }
+
+.search {
+  display: flex;
+  justify-content: center; }
+  .search input[type="search"] {
+    width: 600px;
+    height: 50px;
+    border-radius: 10px; }
+  .search input[type="submit"] {
+    height: 50px;
+    border-radius: 10px; }
+
+/*--------------------------------------------Slider----------------------------------------------*/
+.slider {
+  background-image: url(../images/slider.jpg);
+  width: 100%;
+  height: 500px; }
+
+/*----------------------------------------------TopHotels-----------------------------------------*/
+.topHotels {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .topHotels h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold; }
+  .topHotels img {
+    width: 500px;
+    height: 250px;
+    overflow: hidden; }
+  .topHotels .row {
+    margin-bottom: 5px; }
+
+hr {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+/*------------------------------------------Rating----------------------------------------------------------*/
+.rating {
+  float: left; }
+  .rating:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0); }
+  .rating:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
+    color: #ddd;
+    text-shadow: 1px 1px #bbb, 2px 2px #666, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5); }
+    .rating:not(:checked) > label:before {
+      content: '★'; }
+    .rating:not(:checked) > label:hover {
+      color: gold;
+      text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5); }
+      .rating:not(:checked) > label:hover ~ label {
+        color: gold;
+        text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5); }
+  .rating > input:checked + label:hover, .rating > input:checked ~ label:hover {
+    color: #ea0;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5); }
+    .rating > input:checked + label:hover ~ label, .rating > input:checked ~ label:hover ~ label {
+      color: #ea0;
+      text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5); }
+  .rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5); }
+  .rating > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px; }
+
+/* Конструкция :not(:checked) работает как фильтр, чтобы браузеры, которые не поддерживают псевдокласс :checked не применяли эти свойства. Все браузеры, поддерживающие псевдокласс :checked, поддерживают и псевдокласс :not(), так что фильтр должен отработать правильно. */
+/*
+.rating > input:checked ~ label {
+	color: #f70;
+	text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+*/
+/*------------------------------------------------------------------------*/
+.reviewsMain {
+  background-color: #f0f0f0; }
+  .reviewsMain img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    align-items: center; }
+  .reviewsMain p {
+    color: gray;
+    font-size: 14px; }
+  .reviewsMain h4 {
+    font-weight: bold;
+    font-size: 20px; }
+  .reviewsMain h2 {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px; }
+
+.reviewAuthor {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+footer {
+  background-color: #98a4b7; }
+  footer img {
+    height: 50px; }
+  footer span {
+    font-size: 10px; }
+
+/*-----------------------------------EnterPage---------------------------------------------------------*/
+.registrationBlock h1 {
+  text-align: center; }
+
+.EnterPageBg {
+  background-image: url(../images/signin.jpeg);
+  width: 100%;
+  height: 700px;
+  background-repeat: repeat-x; }
+
+.enterDesc {
+  padding-top: 100px;
+  text-align: center; }
+  .enterDesc p {
+    color: gray; }
+  .enterDesc h2 {
+    text-transform: uppercase;
+    text-align: center; }
+
+.registrationBlock {
+  margin-top: 30px;
+  padding: 60px;
+  background-color: #f0f0f0;
+  float: right;
+  width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px; }
+
+/*-------------------------------------------------------Add hotel ----------------------*/
+.addHotel {
+  background-image: url(../images/addHotel.jpeg);
+  width: 100%;
+  padding-top: 30px; }
+
+.addingForm {
+  background-color: #f0f0f0;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 600px;
+  font-size: 14px; }
+
+/*------------------------Registration Page-----------------------------------------------*/
+.regPageBg {
+  background-image: url(../images/signup.jpeg);
+  width: 100%;
+  height: 700px; }
+
+/*# sourceMappingURL=style.css.map */
