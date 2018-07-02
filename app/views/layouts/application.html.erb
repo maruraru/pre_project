@@ -5,11 +5,45 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="contain">
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <%=image_tag("logo1.png", alt: "Logo", id: 'logo')%>
+          </div> 
+          <div class="col-md-8 goTo">
+            <%= link_to 'Main page', home_index_path  %>
+            <%= link_to 'All hotels', hotels_path %>
+            <% if user_signed_in? %>
+              <%= link_to 'Add hotel', new_hotel_path %>
+            <% end %>
+          </div>
+          <% if user_signed_in? %>
+            <div class="col-md-1">
+              <span>Welcome, <%= current_user.username %></span>
+           </div>
+            <div class="col-md-1">
+              <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class => 'btn btnReg' %>
+            </div>
+          <% else %>
+            <div class="col-md-1">
+              <%= link_to 'Sign in', new_user_session_path, :class => 'btn btn-success' %> 
+            </div>  
+            <div class="col-md-1">
+              <%= link_to 'Sign up', new_user_registration_path, :class => 'btn btnReg' %>
+            </div>
+          <% end%>  
+        </div>
+      </div>
+    </div>
+  </div>  
     <%= yield %>
 
 

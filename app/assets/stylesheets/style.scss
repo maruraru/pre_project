@@ -13,7 +13,9 @@
 	text-align: center;
 	height: 80px;
 	margin-top: 20px;
-	a {
+}
+.goTo{
+	a{
 		line-height: 1;
 		display: inline-block;
 		color: gray;
@@ -42,10 +44,12 @@
 	width: 200px;
 }
 /*---------------------------------------------------------------Buttons-------------------*/
+
 .btnReg {
 	border-color: #097718;
-	color: #097718;
+	color: #097718 !important;
 	background-color: #fff;
+
 }
 /*-------------------------------------search----------------------------------------------------*/
 .description {

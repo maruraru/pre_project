@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 	get 'home/index'
+	get '/devise/hotels', to: 'hotels#index'
 	resources :hotels do
 		resource :location
 		resources :comments, :rooms
