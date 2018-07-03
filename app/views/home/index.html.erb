@@ -1,5 +1,52 @@
-<head></head>
-<body>
+<div class="contain">
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <%=image_tag("logo1.png", alt: "Logo", id: 'logo')%>
+          </div> 
+          <div class="col-md-8 goTo">
+            <%= link_to 'Main page', home_index_path  %>
+            <%= link_to 'All hotels', hotels_path %>
+            <% if user_signed_in? %>
+              <%= link_to 'Add hotel', new_hotel_path %>
+            <% end %>
+          </div>
+          <% if user_signed_in? %>
+            <div class="col-md-1">
+              <span>Welcome, <%= current_user.username %></span>
+           </div>
+            <div class="col-md-1">
+              <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class => 'btn btnReg' %>
+            </div>
+          <% else %>
+            <div class="col-md-1">
+              <%= link_to 'Sign in', new_user_session_path, :class => 'btn btn-success' %> 
+            </div>  
+            <div class="col-md-1">
+              <%= link_to 'Sign up', new_user_registration_path, :class => 'btn btnReg' %>
+            </div>
+          <% end%>  
+        </div>
+      </div>
+    </div>
+ </div>
+
+	<div class="slider">
+		<div class="contain">
+			<div class="description">
+				<h1>HOTEL BROWSER</h1>
+				<p> HOTEL BROWSER compares prices from 200+ booking sites to help you find the lowest price on the right hotel for you</p>
+			</div>
+			<div class="search" >
+				<form action="">
+					<input type="search" placeholder="Hotel name ">
+					<input type="submit" name="Search" value="Search!" class="btn btn-info">
+				</form>
+			</div>
+		</div>
+	</div>
+ <!--
 	<table id="main">
 		<tr>
 			<div class="header">
@@ -28,6 +75,14 @@
 				</td>
 				<td>
 					<div class="topfive">
+						<!--%= HotelsController.render :topfive, assigns: {hotels: Hotel.highest_rated} %-->
+						<!--%= HotelsController.render :topfive, assigns: {hotels: Hotel.all.sort_by {|hotel| hotel.comments.average(:localrate)}.last(5).reverse} %-->
+
+						<!--%= HotelsController.render :topfive, assigns: {hotels: Hotel.sort_by {|hotel| hotel.comments.average(:localrate)}.last(5).reverse} %-->
+
+						<%= HotelsController.render :topfive, assigns: {hotels: Hotel.highest_rated} %>
+
+
 						<p>Top</p>
 					</div>
 				</td>
@@ -39,4 +94,4 @@
 			</div>
 		</tr>
 	</table>
-</body>
+-->
