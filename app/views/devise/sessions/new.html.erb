@@ -20,11 +20,10 @@
  					</div>
  					<div class="form-actions">
  						<%= f.submit "Log in", :class => 'btn btn-success'%>
- 						
+ 						<%= render "devise/shared/links" %>
+ 						<%= link_to 'Return on main page', home_index_path,:class => 'btn btn-light'%>			
  					</div>
  					<% end %>
-
- 					<%= render "devise/shared/links" %>
  				</div></div>
  			</div>
  		</div>
