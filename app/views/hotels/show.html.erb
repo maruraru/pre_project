@@ -41,9 +41,9 @@
           <p>
             <div class="raiting">
               <% if @hotel.comments.any? %>
-              <%= @hotel.comments.average(:localrate) %>
+              <%= @hotel.comments.average(:localrate).round(2) %>
               <% else %>
-              0
+              0.0
               <% end %>
             </div>
           </p>
