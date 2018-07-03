@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       ##Username and avatar (Cheeselord)
       #t.string :username, null: false, default: ""
-      t.string :photo
+      t.text :photo
 
       ## Database authenticatable
 

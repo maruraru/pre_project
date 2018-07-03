@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_205757) do
 
   create_table "hotels", force: :cascade do |t|
     t.string "title"
-    t.string "photo"
+    t.text "photo"
     t.boolean "breakfast"
     t.float "raiting"
     t.datetime "created_at", null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_205757) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "photo"
+    t.text "photo"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
