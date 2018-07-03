@@ -1,0 +1,14 @@
+<% @hotels.each do |hotel| %>
+  <h3><%= hotel.title %></h3>
+  <%= image_tag hotel.photo.thumb.url %>
+  <% if hotel.comments.any? %>
+  <%= hotel.comments.average(:localrate) %>
+  <% else %>
+  0
+  <% end %> 
+  <p>
+     <%= hotel.location.country %>, <%= hotel.location.state %>, <%= hotel.location.city %>
+     <%= hotel.location.street %> street, <%= hotel.location.house %> 
+  </p>
+  <%= link_to 'Show', hotel_path(hotel), :class => 'btn btn-success' %>
+ <% end %>
