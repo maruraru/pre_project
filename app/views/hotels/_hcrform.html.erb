@@ -21,13 +21,11 @@
               <%= f.label :photo %><br>
               <%= f.file_field:photo,  :class => 'form-control'  %> <br>
             </div>
-<div class="includeBreakfast">
-          <% if @hotel.breakfast? %>
-          <p><strong>Breakfast: </strong> yes</p>
-          <% else %>
-          <p><string>Breakfast: </string> no</p>
-          <% end %>
-        </div>
+            <div class="form-inputs">
+              <%= f.label :breakfast %>
+              <%= f.check_box :breakfast %>
+            </div>
+
 
 
 
