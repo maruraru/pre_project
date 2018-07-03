@@ -9,10 +9,8 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <%= yield %>
-
 <footer>
     <div class="contain">
       <div class="container">
@@ -20,14 +18,13 @@
           <div class="col-md-6"> <%=image_tag("RUBY.png", alt: "RubyLogo")%>
            </div>
           <div class="col-md-6"><span>&copy;HOTEL BROWSER <br>
-            All rights reserved.
-            </span>
+            <!--temp search ends-->
+            All rights reserved.</span>
+         </div>
          </div> 
         </div>
       </div>
-    </div>
 </footer>
-
 
 
 
@@ -36,16 +33,6 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
-<!--Trying search form -->
-<!--
-<%= form_tag(hotels_path, method: :get) do %>
-  <%= text_field_tag :term, params[:term], placeholder: "Search by hotel, country or city"%>
-  <%= submit_tag 'Search', name: nil %>
-<% end %>
--->
-
-<!--Search form ends -->
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
