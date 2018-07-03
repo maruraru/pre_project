@@ -6,15 +6,15 @@ class PhotoUploader < CarrierWave::Uploader::Base
   storage :file
 
   version :ava do
-    process resize_to_fill:[150,150]
+    process :resize_to_fill => [150,150]
   end
 
   version :thumb do
-    process resize_to_fill:[500,250]
+    process :resize_to_fill => [400,250]
   end
     
   version :full do
-    process resize_to_fill:[500,250]
+    process :resize_to_fill => [400,400]
   end
     
   end

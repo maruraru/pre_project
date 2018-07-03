@@ -67,14 +67,16 @@
 	display: flex;
 	justify-content: center;
 	input {
-		&[type="search"] {
+		&[type="text"] {
 			width: 600px;
 			height: 50px;
 			border-radius: 10px;
+			display: inline
 		}
 		&[type="submit"] {
 			height: 50px;
 			border-radius: 10px;
+			display: inline;
 		}
 	}
 }
@@ -88,17 +90,19 @@
 }
 
 /*----------------------------------------------TopHotels-----------------------------------------*/
-
+.raitingShow{
+	padding-left: 20px;
+}
 .topHotels {
 	margin-top: 50px;
 	margin-bottom: 50px;
-	h2 {
+	h2{
 		text-align: center;
 		margin-bottom: 30px;
 		font-weight: bold;
 	}
 	img {
-		width: 500px;
+		width: 400px;
 		height: 250px;
 		overflow: hidden;
 	}
@@ -270,6 +274,7 @@ footer {
 	display: inline;
 	color: #ffd344;
 	font-size: 30px;
+	font-weight: bold;
 }
 .addHotel {
 	background-image: url(addHotel.jpeg);
