@@ -16,8 +16,8 @@
     </div>
   <% end %>
             <div class="form-inputs">
-              <%= f.label :title   %><br>
-              <%= f.text_field :title, :class => 'form-control' %> <br>
+              <%= f.label :title  %><br>
+              <%= f.text_field :title, :class => 'form-control', placeholder: "Title of hotel"  %> <br>
               <%= f.label :photo %><br>
               <%= f.file_field:photo,  :class => 'form-control'  %> <br>
             </div>
@@ -34,11 +34,11 @@
   ADD BREAKFAST CHECKBOX!
 -->
   <%= f.simple_fields_for :location do |p|%>
-    <p><%= p.input :country, :as => :string%></p>
-    <p><%= p.input :state %></p>
-    <p><%= p.input :city %></p>
-    <p><%= p.input :street %></p>
-    <p><%= p.input :house %></p>
+    <p><%= p.input :country, :as => :string , placeholder: "Country" %></p>
+    <p><%= p.input :state , placeholder: "State"  %></p>
+    <p><%= p.input :city, placeholder: "City"  %></p>
+    <p><%= p.input :street, placeholder: "Street"  %></p>
+    <p><%= p.input :house, placeholder: "Building"  %></p>
   <% end %>
 
 
