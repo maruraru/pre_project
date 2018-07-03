@@ -40,17 +40,6 @@
     <p><%= p.input :street %></p>
     <p><%= p.input :house %></p>
   <% end %>
-
-  <p><strong>Basic rating:</strong></p>
-  <p >
-    <%= f.radio_button :raiting, 1.0 , :checked => true %>
-    <%= f.radio_button :raiting, 2.0 %>
-    <%= f.radio_button :raiting, 3.0 %>
-    <%= f.radio_button :raiting, 4.0 %>
-    <%= f.radio_button :raiting, 5.0 %>
-  </p>
-
-
   <div id="add-rooms">
   <%= f.simple_fields_for :rooms do |ff| %>
   <div class="roomsform">
