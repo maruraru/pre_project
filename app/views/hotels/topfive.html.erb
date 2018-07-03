@@ -11,9 +11,9 @@
             <div class="col-md-12">
               <h3><%= hotel.title %></h3>
               <% if hotel.comments.any? %>
-              <p class="raiting"><%= hotel.comments.average(:localrate) %></p> 
+              <p class="raiting"><%= hotel.comments.average(:localrate).round(2) %></p> 
               <% else %>
-              0
+              0.0
               <% end %> 
               <p>
                <%= hotel.location.country %>, <%= hotel.location.state %>, <%= hotel.location.city %>
