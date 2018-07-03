@@ -84,58 +84,6 @@
   </div>
 </div>
 <hr>
-<!--
-<p>
-  <strong>Name:</strong>
-  <%= @hotel.title %>
-</p>
-
-<p>
-	<strong>Photo:</strong>
-	<%= image_tag @hotel.photo.full.url %>
-</p>
-
-<p>
-	<strong>Rating: </strong>
-	<% if @hotel.comments.any? %>
-	<%= @hotel.comments.average(:localrate) %>
-	<% else %>
-	0
-	<% end %>
-</p>
-
-<p><strong>Location:</strong></p>
-<p>Country: <%= @hotel.location.country %></p>
-<p>State: <%= @hotel.location.state %></p>
-<p>City: <%= @hotel.location.city %></p>
-<p>Street: <%= @hotel.location.street %></p>
-<p>House: <%= @hotel.location.house %></p>
-
-
-<% if @hotel.breakfast? %>
-  <p><strong>Breakfast: </strong> yes</p>
-<% else %>
-  <p><string>Breakfast: </string> no</p>
-<% end %>
--->
-<!--
-<% @hotel.rooms.each do |room| %>
-  <p>
-    <strong>Type of room:</strong>
-    <%= room.roomtype %>
-  </p>
-
-  <p>
-  	<strong>Price per day:</strong>
-  	<%= room.price %>
-  </p>
- 
-  <p>
-    <strong>Description:</strong>
-    <%= room.description %>
-  </p>
-<% end %>
--->
 
 <div class="reviewsMain">
   <div class="contain">
@@ -180,49 +128,6 @@
 </div>
 
 
-<!--
-<h2>Comments</h2>
-<<<<<<< HEAD
-<%= render @hotel.comments %>
-||||||| merged common ancestors
-<% @hotel.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.user.username %>
-    <p><%= image_tag comment.user.photo.ava.url %></p>
-  </p>
-
-  <p>
-  	<strong>Rating:</strong>
-  	<%= comment.localrate %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.comment %>
-  </p>
-<% end %>
-
-=======
-<% @hotel.comments.each do |comment| %>
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.user.username %>
-  <p><%= image_tag comment.user.photo.ava.url %></p>
-</p>
-
-<p>
- <strong>Rating:</strong>
- <%= comment.localrate %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= comment.comment %>
-</p>
-<% end %>
--->
-
 <% if user_signed_in? %>
 <div class="writeReview">
   <div class="contain">
@@ -257,40 +162,7 @@
 </div>
 <% end %>
 <% end %>
-<!--
-<% if user_signed_in? %>
-<h2>Add a comment:</h2>
-<<<<<<< HEAD
-<%= render 'comments/form' %>
-||||||| merged common ancestors
-<%= simple_form_for ([@hotel, @hotel.comments.build]) do |f| %>
-  <p>
-  	<strong>Rating: </strong>
-  	<%= f.radio_button :localrate, 1.0, :checked => true %>
-    <%= f.radio_button :localrate, 2.0 %>
-    <%= f.radio_button :localrate, 3.0 %>
-    <%= f.radio_button :localrate, 4.0 %>
-    <%= f.radio_button :localrate, 5.0 %>
-  </p>
-  <p><%= f.input :comment %></p>
-  <p><%= f.button :submit %></p>
-<% end %>
-=======
-<%= simple_form_for ([@hotel, @hotel.comments.build]) do |f| %>
-<p>
- <strong>Rating: </strong>
- <%= f.radio_button :localrate, 1.0, :checked => true %>
- <%= f.radio_button :localrate, 2.0 %>
- <%= f.radio_button :localrate, 3.0 %>
- <%= f.radio_button :localrate, 4.0 %>
- <%= f.radio_button :localrate, 5.0 %>
-</p>
-<p><%= f.input :comment %></p>
-<p><%= f.button :submit %></p>
-<% end %>
->>>>>>> 6b3c8da12d0719d32b662d6bec352ff87de5c870
-<% end %>
--->
+
 
 <% if user_signed_in? %>
 <p ><%= link_to 'Edit', edit_hotel_path(@hotel), :class => 'btn btn-light' %></p>
