@@ -42,7 +42,7 @@
   <% end %>
 
   <p><strong>Basic rating:</strong></p>
-  <p>
+  <p >
     <%= f.radio_button :raiting, 1.0 , :checked => true %>
     <%= f.radio_button :raiting, 2.0 %>
     <%= f.radio_button :raiting, 3.0 %>
@@ -69,7 +69,8 @@
 
 
 
-  <p><%= f.button :submit, :class => 'btn btn-success'%></p>
+<%= f.button :submit, :class => 'btn btn-success'%>
+  <%= link_to 'Return on main page', home_index_path,:class => 'btn btn-light'%>  
 <% end %>
 </div>
 </div>
