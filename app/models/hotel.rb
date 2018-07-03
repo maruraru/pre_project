@@ -14,8 +14,7 @@ class Hotel < ApplicationRecord
 
 
 
-
-	scope :highest_rated, ->{sort_by {|hotel| hotel.comments.average(:localrate)}.last(5).reverse}
+	scope :highest_rated, ->{joins(:comments).where('comments.id is not null').sort_by {|hotel| hotel.comments.average(:localrate)}.last(5).reverse}
 
 	#=====for search form (i guess)=====
 	def self.search(term)

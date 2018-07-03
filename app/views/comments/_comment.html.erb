@@ -1,7 +1,7 @@
-<p>
+  <p>
     <strong>Commenter:</strong>
     <%= comment.user.username %>
-    <p><%= image_tag comment.user.photo.ava.url %></p>
+    <p><%= image_tag comment.user.photo.ava.url if comment.user.photo.url%></p>
   </p>
 
   <p>
