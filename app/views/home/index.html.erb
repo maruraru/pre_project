@@ -75,6 +75,14 @@
 				</td>
 				<td>
 					<div class="topfive">
+						<!--%= HotelsController.render :topfive, assigns: {hotels: Hotel.highest_rated} %-->
+						<!--%= HotelsController.render :topfive, assigns: {hotels: Hotel.all.sort_by {|hotel| hotel.comments.average(:localrate)}.last(5).reverse} %-->
+
+						<!--%= HotelsController.render :topfive, assigns: {hotels: Hotel.sort_by {|hotel| hotel.comments.average(:localrate)}.last(5).reverse} %-->
+
+						<%= HotelsController.render :topfive, assigns: {hotels: Hotel.highest_rated} %>
+
+
 						<p>Top</p>
 					</div>
 				</td>

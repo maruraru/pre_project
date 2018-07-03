@@ -4,7 +4,7 @@ class HotelsController < ApplicationController
 
 
 	def index
-		@hotels = Hotel.all.page(params[:page]).per(10)
+		@hotels = Hotel.search(params[:term]).page(params[:page]).per(10)
 	end
 
 
@@ -47,10 +47,17 @@ end
 	end
 end
 
+	#=====topfive test=====
+	def topfive
+		#@hotels=Hotel.highest_rated
+		@hotels=Hotel.all
+	end
+	#=====topfive test=====
 
 	private
   	def hotel_params
-   		params.require(:hotel).permit(:title, :photo, :breakfast, :raiting, location_attributes: [:country, :state, :city, :street, :house], rooms_attributes: [:id, :roomtype, :price, :description])
+  		#TERM is added
+   		params.require(:hotel).permit(:title, :photo, :breakfast, :raiting, :term, location_attributes: [:country, :state, :city, :street, :house], rooms_attributes: [:id, :roomtype, :price, :description])
   	end
 
 end

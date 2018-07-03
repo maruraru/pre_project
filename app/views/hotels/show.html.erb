@@ -41,9 +41,9 @@
           <p>
             <div class="raiting">
               <% if @hotel.comments.any? %>
-              <%= (@hotel.raiting+@hotel.comments.average(:localrate))/2.0 %>
+              <%= @hotel.comments.average(:localrate) %>
               <% else %>
-              <%= @hotel.raiting %>
+              0
               <% end %>
             </div>
           </p>
@@ -98,9 +98,9 @@
 <p>
 	<strong>Rating: </strong>
 	<% if @hotel.comments.any? %>
-	<%= (@hotel.raiting+@hotel.comments.average(:localrate))/2.0 %>
+	<%= @hotel.comments.average(:localrate) %>
 	<% else %>
-	<%= @hotel.raiting %>
+	0
 	<% end %>
 </p>
 
@@ -117,8 +117,8 @@
 <% else %>
   <p><string>Breakfast: </string> no</p>
 <% end %>
-
-
+-->
+<!--
 <% @hotel.rooms.each do |room| %>
   <p>
     <strong>Type of room:</strong>
@@ -135,7 +135,6 @@
     <%= room.description %>
   </p>
 <% end %>
-
 -->
 
 <div class="reviewsMain">
@@ -146,13 +145,17 @@
           <h2>Reviews</h2>
         </div>
       </div>
-       <% @hotel.comments.each do |comment| %>
+
+      <% @hotel.comments.each do |comment| %>
       <div class="row">
         <div class="col-md-6 reviewAuthor ">
          
           <p>
             <strong>Commenter:</strong>
-            <p><%= image_tag comment.user.photo.ava.url %></p>
+            <p>
+              <% if comment.user.photo.url %>
+              <%= image_tag comment.user.photo.ava.url %></p>
+              <% end %>
             <%= comment.user.username %>
           </p>
         </div>
@@ -179,6 +182,28 @@
 
 <!--
 <h2>Comments</h2>
+<<<<<<< HEAD
+<%= render @hotel.comments %>
+||||||| merged common ancestors
+<% @hotel.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.user.username %>
+    <p><%= image_tag comment.user.photo.ava.url %></p>
+  </p>
+
+  <p>
+  	<strong>Rating:</strong>
+  	<%= comment.localrate %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.comment %>
+  </p>
+<% end %>
+
+=======
 <% @hotel.comments.each do |comment| %>
 <p>
   <strong>Commenter:</strong>
@@ -232,10 +257,25 @@
 </div>
 <% end %>
 <% end %>
-
 <!--
 <% if user_signed_in? %>
 <h2>Add a comment:</h2>
+<<<<<<< HEAD
+<%= render 'comments/form' %>
+||||||| merged common ancestors
+<%= simple_form_for ([@hotel, @hotel.comments.build]) do |f| %>
+  <p>
+  	<strong>Rating: </strong>
+  	<%= f.radio_button :localrate, 1.0, :checked => true %>
+    <%= f.radio_button :localrate, 2.0 %>
+    <%= f.radio_button :localrate, 3.0 %>
+    <%= f.radio_button :localrate, 4.0 %>
+    <%= f.radio_button :localrate, 5.0 %>
+  </p>
+  <p><%= f.input :comment %></p>
+  <p><%= f.button :submit %></p>
+<% end %>
+=======
 <%= simple_form_for ([@hotel, @hotel.comments.build]) do |f| %>
 <p>
  <strong>Rating: </strong>
@@ -248,6 +288,7 @@
 <p><%= f.input :comment %></p>
 <p><%= f.button :submit %></p>
 <% end %>
+>>>>>>> 6b3c8da12d0719d32b662d6bec352ff87de5c870
 <% end %>
 -->
 

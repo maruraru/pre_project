@@ -51,9 +51,9 @@
             <div class="row">
               <div class="raiting" >
                 <% if hotel.comments.any? %>
-                <%= (hotel.raiting+hotel.comments.average(:localrate))/2.0 %>
+                <%= hotel.comments.average(:localrate) %>
                 <% else %>
-                <%= hotel.raiting %>
+                0
                 <% end %>
                 <!-- Тут не должно быть возможности нажимать на звезды. Оценку ставим только в отзыве
                 <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Best!">5 stars</label>

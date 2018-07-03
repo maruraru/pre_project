@@ -28,10 +28,7 @@
 
 
 <!--
-
-  <p><%= f.input :title %></p>
-  <p><%= f.input :photo %></p>
-  <p><strong>Breakfast: </strong><%= f.check_box :breakfast %></p>
+  ADD BREAKFAST CHECKBOX!
 -->
   <%= f.simple_fields_for :location do |p|%>
     <p><%= p.input :country, :as => :string%></p>
@@ -40,20 +37,20 @@
     <p><%= p.input :street %></p>
     <p><%= p.input :house %></p>
   <% end %>
-  <div id="add-rooms">
-  <%= f.simple_fields_for :rooms do |ff| %>
-  <div class="roomsform">
-  <p><%= ff.input :roomtype %></p>
-  <p><%= ff.input :price %></p>
-  <p><%= ff.input :description %></p>
-  </div>
-  <% end %>
 
-  <div id="add-room"!>
-    <%= f.link_to_add :rooms do%>
-    <p><button type="button">Add room</button></p>
+
+
+  <h3>Rooms</h3>
+  <div id="rooms">
+    
+    <%= f.simple_fields_for :rooms do |room| %>
+      <%= render 'room_fields', f: room %>
     <% end %>
-  </div>
+
+    <div class="links">
+      <%= link_to_add_association 'add room', f, :rooms %>
+    </div>
+
   </div>
 
 
