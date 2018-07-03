@@ -152,7 +152,7 @@
           <p>
             <strong>Commenter:</strong>
             <p>
-              <% if comment.user.photo !=nil %>
+              <% if comment.user.photo.url %>
               <%= image_tag comment.user.photo.ava.url %></p>
               <% end %>
             <%= comment.user.username %>
