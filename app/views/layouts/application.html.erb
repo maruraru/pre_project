@@ -12,20 +12,13 @@
 
   <body>
     <%= yield %>
-      <footer>
+    <footer>
     <div class="contain">
       <div class="container">
         <div class="row">
           <div class="col-md-6"> <%=image_tag("RUBY.png", alt: "RubyLogo")%>
            </div>
           <div class="col-md-6"><span>&copy;HOTEL BROWSER <br>
-            
-            <!--temporary search-->
-            <p>
-            <%= form_tag(hotels_path, method: :get) do %>
-            <%= text_field_tag :term, params[:term], placeholder: "Search by hotel, country or city"%>
-            <%= submit_tag 'Search', name: nil %>
-            <% end %>
             <!--temp search ends-->
             </p>
             All rights reserved.
