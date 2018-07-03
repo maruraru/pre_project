@@ -259,7 +259,18 @@ footer {
 }
 
 /*-------------------------------------------------------Add hotel ----------------------*/
-
+.hotelInfo{
+	padding-left: 30px;
+	background:linear-gradient(to bottom, #fff, #e8f6f7, #fff) ;
+	h1{
+		text-align:center;
+	}
+}
+.raiting{
+	display: inline;
+	color: #ffd344;
+	font-size: 30px;
+}
 .addHotel {
 	background-image: url(addHotel.jpeg);
 	width: 100%;
@@ -297,3 +308,12 @@ input[type="text"], textarea, input[type="number"]{
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+.writeReview {
+  background: linear-gradient(to bottom, #fff, #b3f99d, #f0f0f0); }
+  .writeReview .reviewDescr {
+    padding-top: 150px;
+    text-align: center; }
+    .writeReview .reviewDescr p {
+      color: gray; }
+  .writeReview .registrationBlock {
+    margin-bottom: 50px; }

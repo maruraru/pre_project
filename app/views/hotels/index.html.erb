@@ -49,7 +49,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="rating">
+              <div class="raiting">
                 <% if hotel.comments.any? %>
                 <%= (hotel.raiting+hotel.comments.average(:localrate))/2.0 %>
                 <% else %>
