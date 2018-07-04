@@ -8,6 +8,7 @@
 	width: 1170px;
 	margin-left: auto;
 	margin-right: auto;
+	min-height: 100%;
 }
 
 .header {
@@ -220,6 +221,13 @@ hr {
 }
 footer {
 	background-color: #98a4b7;
+	height: 50px;
+flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+
+
+
 	img {
 		height: 50px;
 	}
@@ -371,9 +379,23 @@ img{
 	width: 500px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 	border-radius: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 .forgotBg{
-	background: linear-gradient(to bottom, #fff, #b3f99d, #f0f0f0); 
-	height: 100vh;
+	background: linear-gradient(to bottom, #fff, #b3f99d, #fff); 
+
+	padding-top: 30px;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.allContent{
+	flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+html, body {
+  height: 100%;
 }
