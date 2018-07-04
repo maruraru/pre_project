@@ -1,0 +1,44 @@
+- if user_signed_in?
+  %p= link_to 'Add hotel', new_hotel_path
+%table
+  %tr
+    %th Name
+    %th Location
+    %th Description
+    %th
+  - @hotels.each do |hotel|
+    %tr
+      %td= image_tag hotel.photo.thumb.url
+      %td
+        %p
+          %strong Hotel:
+          = hotel.title
+        %p
+          %strong Rating:
+          - if hotel.comments.any?
+            = (hotel.raiting+hotel.comments.average(:localrate))/2.0
+          - else
+            = hotel.raiting
+        %p
+          Country: #{hotel.location.country}
+        %p
+          State: #{hotel.location.state}
+        %p
+          City: #{hotel.location.city}
+        %p
+          Street: #{hotel.location.street}
+        %p
+          House: #{hotel.location.house}
+        - if hotel.breakfast?
+          %p
+            %strong Breakfast:
+            yes
+        - else
+          %p
+            %string Breakfast:
+            no
+      %td
+        %p= link_to 'Show', hotel_path(hotel)
+        - if user_signed_in?
+          %p= link_to 'Edit', edit_hotel_path(hotel)
+= paginate @hotels

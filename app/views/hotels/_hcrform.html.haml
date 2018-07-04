@@ -1,0 +1,61 @@
+.addHotel
+  .addingForm
+    = simple_nested_form_for @hotel do |f|
+      %h1 Adding form
+      - if @hotel.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@hotel.errors.count, "error")
+            prohibited
+            this article from being saved:
+          %ul
+            - @hotel.errors.full_messages.each do |msg|
+              %li= msg
+      .form-inputs
+        = f.label :title
+        %br/
+        = f.text_field :title, :class => 'form-control', placeholder: "Title of hotel"
+        %br/
+        = f.label :photo
+        %br/
+        = f.file_field:photo,  :class => 'form-control'
+        %br/
+      .form-inputs
+        = f.label :breakfast
+        = f.check_box :breakfast
+      = f.simple_fields_for :location do |p|
+        %p= p.input :country, :as => :string , placeholder: "Country"
+        %p= p.input :state , placeholder: "State"
+        %p= p.input :city, placeholder: "City"
+        %p= p.input :street, placeholder: "Street"
+        %p= p.input :house, placeholder: "Building"
+      = f.button :submit, :class => 'btn btn-success'
+      = link_to 'Return on main page', home_index_path,:class => 'btn btn-light'
+- if !@hotel.new_record?
+  .forgotBg
+    .contain
+      %h3 Added rooms:
+      - @hotel.rooms.each do |room|
+        .roomType
+          %p
+            %strong Type of room:
+            = room.roomtype
+          %p
+            %strong Price per day:
+            = room.price
+          %p
+            %strong Description:
+            = room.description
+          %p
+            = link_to 'Remove room', [room.hotel, room], |
+              method: :delete,                           |
+              data: { confirm: 'Are you sure?' },        |
+              :class =>'btn btnReg'                      |
+        %hr/
+    .forgotPassw
+      %h1 Add room:
+      = simple_form_for ([@hotel, @hotel.rooms.build]) do |f|
+        %p= f.input :roomtype , placeholder: "Room-type"
+        %p= f.input :price
+        %p= f.input :description , placeholder: "Description of hotel"
+        %p= f.button :submit, :class => 'btn btn-success'

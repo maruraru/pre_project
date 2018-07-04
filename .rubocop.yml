@@ -1,0 +1,19 @@
+AllCops:
+  Exclude:
+    - "vendor/**/*"
+    - "bin/*"
+    - "db/schema.rb"
+    - "test/**/*"
+    - "db/migrate/20180628234359_devise_create_users.rb"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 190
+
+Metrics/MethodLength:
+  Max: 35
+
+Style/Documentation:
+  Enabled: false

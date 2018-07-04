@@ -1,0 +1,130 @@
+.contain
+  .header
+    .container
+      .row
+        .col-md-2
+          = image_tag("logo1.png", alt: "Logo", id: 'logo')
+        .col-md-8.goTo
+          = link_to 'Main page', home_index_path
+          = link_to 'All hotels', hotels_path
+          - if user_signed_in?
+            = link_to 'Add hotel', new_hotel_path
+        - if user_signed_in?
+          .col-md-1
+            %span
+              Welcome, #{current_user.username}
+          .col-md-1
+            = link_to 'Sign out', destroy_user_session_path, :method => :delete, :class => 'btn btnReg'
+        - else
+          .col-md-1
+            = link_to 'Sign in', new_user_session_path, :class => 'btn btn-success'
+          .col-md-1
+            = link_to 'Sign up', new_user_registration_path, :class => 'btn btnReg'
+.contain
+  .hotelInfo
+    %h1= @hotel.title
+    %hr/
+    .row
+      .col-md-6
+        %p
+        %p
+        .raiting
+          - if @hotel.comments.any?
+            = @hotel.comments.average(:localrate).round(2)
+          - else
+            0.0
+        %p
+          %strong Location:
+        %p
+          Country: #{@hotel.location.country}
+        %p
+          State: #{@hotel.location.state}
+        %p
+          City: #{@hotel.location.city}
+        %p
+          Street: #{@hotel.location.street}
+        %p
+          House: #{@hotel.location.house}
+        - @hotel.rooms.each do |room|
+          %strong Type of room:
+          = room.roomtype
+          %p
+            %strong Price per day:
+            = room.price
+          %p
+            %strong Description:
+            = room.description
+        .includeBreakfast
+          - if @hotel.breakfast?
+            %p
+              %strong Breakfast:
+              yes
+          - else
+            %p
+              %string Breakfast:
+              no
+      .col-md-6
+        = image_tag @hotel.photo.full.url
+%hr/
+.reviewsMain
+  .contain
+    .container
+      .row
+        .col-md-12
+          %h2 Reviews
+      - @hotel.comments.each do |comment|
+        .row
+          .col-md-6.reviewAuthor
+            %p
+              %strong Commenter:
+            %p
+              - if comment.user.photo.url
+                = image_tag comment.user.photo.ava.url
+            = comment.user.username
+          .col-md-6
+            .row
+              .col-md-12
+                .raiting
+                  = comment.localrate
+              .col-md-12
+                %strong Comment:
+                %p.gray
+                  = comment.comment
+                - if current_user && comment.user_id==current_user.id
+                  %p
+                    = link_to 'Remove review', [comment.hotel, comment], |
+                      method: :delete,                                   |
+                      data: { confirm: 'Are you sure?' }                 |
+        %hr/
+- if user_signed_in?
+  - if @hotel.comments.exists?(current_user.id)
+    %hr/
+    %h4
+      You have already rated. If your opinion has changed,
+      delete the old comment please.
+    %hr/
+  - else
+    .writeReview
+      .contain
+        .container
+          .row
+            .col-md-6
+              .registrationBlock
+                %h1 Review
+                = simple_form_for ([@hotel, @hotel.comments.build]) do |f|
+                  .form-group
+                    %strong Rating:
+                    = f.radio_button :localrate, 1.0, :checked => true
+                    = f.radio_button :localrate, 2.0
+                    = f.radio_button :localrate, 3.0
+                    = f.radio_button :localrate, 4.0
+                    = f.radio_button :localrate, 5.0
+                  .form-group
+                    %p= f.input :comment
+                    %p= f.button :submit, :class => 'btn btn-success'
+            .col-md-6.reviewDescr
+              %h2 We need your help
+              %p You can help us make our service better. Write a review, please
+- if user_signed_in?
+  %p= link_to 'Edit', edit_hotel_path(@hotel), :class => 'btn btn-light'
+%p= link_to 'Return on the main page', hotels_path, :class => 'btn btn-light'

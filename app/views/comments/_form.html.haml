@@ -1,0 +1,10 @@
+= simple_form_for ([@hotel, @hotel.comments.build]) do |f|
+  %p
+    %strong Rating:
+    = f.radio_button :localrate, 1.0, :checked => true
+    = f.radio_button :localrate, 2.0
+    = f.radio_button :localrate, 3.0
+    = f.radio_button :localrate, 4.0
+    = f.radio_button :localrate, 5.0
+  %p= f.input :comment
+  %p= f.button :submit
