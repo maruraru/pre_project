@@ -11,14 +11,14 @@ class RoomsController < ApplicationController
   def create
     #@hotel = Hotel.find(params[:hotel_id])
     @room = @hotel.rooms.build(room_params)
-    redirect_to hotel_path(@hotel) if @room.save
+    redirect_to edit_hotel_path(@hotel) if @room.save
   end
 
   def destroy
     #@hotel = Hotel.find(params[:hotel_id])
     @room = @hotel.rooms.find(params[:id])
     @room.destroy
-    redirect_to hotel_path(@hotel)
+    redirect_to edit_hotel_path(@hotel)
   end
  
   private
