@@ -1,0 +1,62 @@
+.contain
+  .header
+    .container
+      .row
+        .col-md-2
+          = image_tag("logo1.png", alt: "Logo", id: 'logo')
+        .col-md-8.goTo
+          = link_to 'Main page', home_index_path
+          = link_to 'All hotels', hotels_path
+          - if user_signed_in?
+            = link_to 'Add hotel', new_hotel_path
+        - if user_signed_in?
+          .col-md-1
+            %span
+              Welcome, #{current_user.username}
+          .col-md-1
+            = link_to 'Sign out', destroy_user_session_path, :method => :delete, :class => 'btn btnReg'
+        - else
+          .col-md-1
+            = link_to 'Sign in', new_user_session_path, :class => 'btn btn-success'
+          .col-md-1
+            = link_to 'Sign up', new_user_registration_path, :class => 'btn btnReg'
+.slider
+  .contain
+    .description
+      %h1 HOTEL BROWSER
+      %p With our diverse selection of hotels you’ll always find the perfect place to stay.
+    = form_tag(hotels_path, method: :get) do
+      .search
+        %p
+          = text_field_tag :term, params[:term], placeholder: "Search by hotel, country or city"
+          = submit_tag 'Search', name: nil,:class => 'btn btn-info'
+- hotels = Hotel.highest_rated
+.topHotels
+  .container
+    .row
+      .col-md-12
+        %h2 Hotels
+    - @hotels.each do |hotel|
+      .row
+        .col-md-6
+          = image_tag hotel.photo.thumb.url
+        .col-md-6
+          .row
+            .col-md-12
+              %h3= hotel.title
+          .row
+            .raiting.raitingShow
+              - if hotel.comments.any?
+                = hotel.comments.average(:localrate).round(2)
+              - else
+                0.0
+          .row
+            .col-md-12.gray
+              %p
+                = hotel.location.country
+                , #{hotel.location.state}, #{hotel.location.city}#{hotel.location.street} street, #{hotel.location.house}
+          .row
+            .col-md-2
+              = link_to 'Show', hotel_path(hotel), :class => 'btn btn-success'
+      %hr/
+    = paginate @hotels
