@@ -8,6 +8,7 @@ class User < ApplicationRecord
   #Cheeselord block: ends
   
   has_many :comments
-  devise :database_authenticatable, :confirmable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable,
+  # :confirmable,
+   :registerable, :recoverable, :rememberable, :trackable, :validatable
 end
