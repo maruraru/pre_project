@@ -140,6 +140,12 @@
 
 
 <% if user_signed_in? %>
+<% if @hotel.comments.exists?(current_user.id)  %>
+  <hr>
+  <h4> You have already rated. If your opinion has changed, 
+    delete the old comment please. </h4>
+  <hr>
+<% else %>
 <div class="writeReview">
   <div class="contain">
     <div class="container">
@@ -171,6 +177,7 @@
     </div>
   </div>
 </div>
+<% end %>
 <% end %>
 <% end %>
 
