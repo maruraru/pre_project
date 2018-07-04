@@ -140,6 +140,12 @@
 
 
 <% if user_signed_in? %>
+<% if @hotel.comments.exists?(current_user.id)  %>
+  <hr>
+  <h4> You have already rated. If your opinion has changed, 
+    delete the old comment please. </h4>
+  <hr>
+<% else %>
 <div class="writeReview">
   <div class="contain">
     <div class="container">
@@ -148,7 +154,7 @@
           <div class="registrationBlock">
             <h1>Review</h1>
             <%= simple_form_for ([@hotel, @hotel.comments.build]) do |f| %>
-              <div class="form-group rating">
+              <div class="form-group">
               <strong>Rating: </strong>
                <%= f.radio_button :localrate, 1.0, :checked => true %>
                <%= f.radio_button :localrate, 2.0 %>
@@ -171,6 +177,7 @@
     </div>
   </div>
 </div>
+<% end %>
 <% end %>
 <% end %>
 
