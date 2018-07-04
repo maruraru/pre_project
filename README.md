@@ -1,25 +1,9 @@
-# README
+# Hotel Browser
+> With our diverse selection of hotels you’ll always find the perfect place to stay.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hotel Browser allows you to read reviews of hundreds of hotels, compare hotel ratings, give hotel reviews. All these features allow our users to choose the best places for holiday or business trip.
 
-Things you may want to cover:
+![](header.png)
 
-* Ruby version
+## Usage example
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# pre_project
