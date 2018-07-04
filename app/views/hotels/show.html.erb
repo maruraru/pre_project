@@ -118,6 +118,16 @@
               <strong>Comment:</strong>
               <p class="gray">
               <%= comment.comment %></p>
+              <!--Delete comment-->
+              <% if comment.user_id==current_user.id %>
+              <p>
+                <%= link_to 'Remove review', [comment.hotel, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+              </p>
+              <% end %>
+              <!--Delete comment-->
+              
             </div>
           </div>
         </div>
@@ -145,7 +155,7 @@
                <%= f.radio_button :localrate, 3.0 %>
                <%= f.radio_button :localrate, 4.0 %>
                <%= f.radio_button :localrate, 5.0 %>
-            </div>
+              </div>
               <div class="form-group">
               <p><%= f.input :comment %></p>
               <p><%= f.button :submit, :class => 'btn btn-success' %></p>

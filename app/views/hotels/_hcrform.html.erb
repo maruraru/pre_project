@@ -35,24 +35,44 @@
   <% end %>
 
 
-
-  <h3>Rooms</h3>
-  <div id="rooms">
-    
-    <%= f.simple_fields_for :rooms do |room| %>
-      <%= render 'room_fields', f: room %>
-    <% end %>
-
-    <div class="links">
-      <%= link_to_add_association 'add room', f, :rooms %>
-    </div>
-
-  </div>
-
-
-
+  
 <%= f.button :submit, :class => 'btn btn-success'%>
   <%= link_to 'Return on main page', home_index_path,:class => 'btn btn-light'%>  
 <% end %>
 </div>
 </div>
+
+
+<% if !@hotel.new_record? %>
+<p>IT'S NOT NEW!</p>
+
+<% @hotel.rooms.each do |room| %>
+  <p>
+   <strong>Type of room: </strong>
+   <%= room.roomtype %>
+  </p>
+  <p>
+   <strong>Price per day: </strong>
+   <%= room.roomtype %>
+  </p>
+  <p>
+   <strong>Description: </strong>
+   <%= room.description %>
+  </p>
+  <p>
+    <%= link_to 'Remove room', [room.hotel, room],
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+
+<h1>Add room: </h1>
+<%= simple_form_for ([@hotel, @hotel.rooms.build]) do |f| %>
+  <p><%= f.input :roomtype , placeholder: "Room-type"  %></p>
+  <p><%= f.input :price %></p>
+  <p><%= f.input :description , placeholder: "Description of hotel"  %></p>
+  <p><%= f.button :submit, :class => 'btn btn-success' %></p>
+<% end %>          
+
+
+<% end %>
