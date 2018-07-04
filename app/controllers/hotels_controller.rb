@@ -40,17 +40,13 @@ class HotelsController < ApplicationController
     end
   end
 
-  #=====topfive test=====
   def topfive
-    # @hotels=Hotel.highest_rated
     @hotels = Hotel.all
   end
-  #=====topfive test=====
 
   private
 
   def hotel_params
-    # TERM is added
     params.require(:hotel).permit(:title, :photo, :breakfast, :raiting, :term, location_attributes: %i[country state city street house], rooms_attributes: %i[id roomtype price description])
   end
 end

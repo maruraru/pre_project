@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
-
   before_action :curr_hotel, only: %i[create destroy]
 
   def new
@@ -8,13 +7,11 @@ class RoomsController < ApplicationController
   end
 
   def create
-    # @hotel = Hotel.find(params[:hotel_id])
     @room = @hotel.rooms.build(room_params)
     redirect_to edit_hotel_path(@hotel) if @room.save
   end
 
   def destroy
-    # @hotel = Hotel.find(params[:hotel_id])
     @room = @hotel.rooms.find(params[:id])
     @room.destroy
     redirect_to edit_hotel_path(@hotel)

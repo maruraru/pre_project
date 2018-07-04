@@ -38,14 +38,12 @@
 				<p> With our diverse selection of hotels you’ll always find the perfect place to stay.</p>
 			</div>
 			<%= form_tag(hotels_path, method: :get) do %>
-			<div class="search" >            <!--temporary search-->
-            <p>
-
-            <%= text_field_tag :term, params[:term], placeholder: "Search by hotel, country or city"%>
-            <%= submit_tag 'Search', name: nil,:class => 'btn btn-info' %>
-            <!--temp search ends-->
-             <% end %>
-            </p>
+			<div class="search" >
+        <p>
+          <%= text_field_tag :term, params[:term], placeholder: "Search by hotel, country or city"%>
+          <%= submit_tag 'Search', name: nil,:class => 'btn btn-info' %>
+          <% end %>
+        </p>
 			</div>
 		</div>
 	</div>
@@ -54,7 +52,6 @@
   <h2>Top hotels</h2>
   <div class="contain">
     <div class="container">
-
       <% hotels.each do |hotel| %>
       <div class="row">
         <div class="col-md-6">  <%= image_tag hotel.photo.thumb.url %></div>
@@ -81,12 +78,12 @@
      </div>
    </div>
  </div>
-        <div class="mockup">
-          <h2>Why you should choose us?</h2>
-          <div>
-          <%=image_tag("mockup3.png", alt: "Mockup")%>
-          </div> 
-          <div class="advantages">
+  <div class="mockup">
+    <h2>Why you should choose us?</h2>
+      <div>
+       <%=image_tag("mockup3.png", alt: "Mockup")%>
+         </div> 
+           <div class="advantages">
             <div class="contain">
               <div class="container">
                 <div class="row">

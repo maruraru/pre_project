@@ -13,7 +13,6 @@ class Hotel < ApplicationRecord
 
   scope :highest_rated, -> { joins(:comments).where('comments.id is not null').uniq.sort_by { |hotel| hotel.comments.average(:localrate) }.last(5).reverse }
 
-  #=====for search form (i guess)=====
   def self.search(term)
     if term
       joins(:location).where('title ILIKE ? OR locations.country ILIKE ? OR locations.city ILIKE ?', "%#{term}%", "%#{term}%", "%#{term}%")
@@ -21,5 +20,4 @@ class Hotel < ApplicationRecord
       all
     end
   end
-  #=====for search form (i guess)=====
 end

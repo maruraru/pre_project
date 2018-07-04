@@ -8,14 +8,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # @hotel = Hotel.find(params[:hotel_id])
     @comment = current_user.comments.build(comment_params)
     @comment.hotel_id = @hotel.id
     redirect_to hotel_path(@hotel) if @comment.save
   end
 
   def destroy
-    # @hotel = Hotel.find(params[:hotel_id])
     @comment = @hotel.comments.find(params[:id])
     @comment.destroy
     redirect_to hotel_path(@hotel)
