@@ -118,7 +118,6 @@
               <strong>Comment:</strong>
               <p class="gray">
               <%= comment.comment %></p>
-              <!--Delete comment-->
               <% if current_user && comment.user_id==current_user.id %>
               <p>
                 <%= link_to 'Remove review', [comment.hotel, comment],
@@ -126,7 +125,6 @@
                 data: { confirm: 'Are you sure?' } %>
               </p>
               <% end %>
-              <!--Delete comment-->
               
             </div>
           </div>

@@ -34,14 +34,11 @@
     <p><%= p.input :house, placeholder: "Building"  %></p>
   <% end %>
 
-
-  
 <%= f.button :submit, :class => 'btn btn-success'%>
   <%= link_to 'Return on main page', home_index_path,:class => 'btn btn-light'%>  
 <% end %>
 </div>
 </div>
-
 
 <% if !@hotel.new_record? %>
 <div class="forgotBg">
