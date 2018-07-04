@@ -44,9 +44,13 @@
 
 
 <% if !@hotel.new_record? %>
-<p>IT'S NOT NEW!</p>
-
+<div class="forgotBg">
+  <div class="contain">
+   <h3>Added rooms:</h3>
 <% @hotel.rooms.each do |room| %>
+
+<div class="roomType">
+
   <p>
    <strong>Type of room: </strong>
    <%= room.roomtype %>
@@ -62,9 +66,14 @@
   <p>
     <%= link_to 'Remove room', [room.hotel, room],
     method: :delete,
-    data: { confirm: 'Are you sure?' } %>
-  </p>
+    data: { confirm: 'Are you sure?' },
+    :class =>'btn btnReg'
+     %>
+  </p></div>
+  <hr>
 <% end %>
+</div>
+<div class="forgotPassw">
 
 <h1>Add room: </h1>
 <%= simple_form_for ([@hotel, @hotel.rooms.build]) do |f| %>
@@ -72,7 +81,9 @@
   <p><%= f.input :price %></p>
   <p><%= f.input :description , placeholder: "Description of hotel"  %></p>
   <p><%= f.button :submit, :class => 'btn btn-success' %></p>
-<% end %>          
-
-
+</div> 
+</div>         
 <% end %>
+<% end %>
+
+

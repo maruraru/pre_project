@@ -148,7 +148,7 @@
           <div class="registrationBlock">
             <h1>Review</h1>
             <%= simple_form_for ([@hotel, @hotel.comments.build]) do |f| %>
-              <div class="form-group">
+              <div class="form-group rating">
               <strong>Rating: </strong>
                <%= f.radio_button :localrate, 1.0, :checked => true %>
                <%= f.radio_button :localrate, 2.0 %>
