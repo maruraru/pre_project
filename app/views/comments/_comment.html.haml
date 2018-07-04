@@ -1,0 +1,10 @@
+%p
+  %strong Commenter:
+  = comment.user.username
+%p= image_tag comment.user.photo.ava.url if comment.user.photo.url
+%p
+  %strong Rating:
+  = comment.localrate
+%p
+  %strong Comment:
+  = comment.comment
