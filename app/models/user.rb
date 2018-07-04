@@ -9,6 +9,6 @@ class User < ApplicationRecord
   
   has_many :comments
   devise :database_authenticatable,
-  # :confirmable,
-   :registerable, :recoverable, :rememberable, :trackable, :validatable
+    :confirmable,
+    :registerable, :recoverable, :rememberable, :trackable, :validatable
 end
