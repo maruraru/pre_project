@@ -119,7 +119,7 @@
               <p class="gray">
               <%= comment.comment %></p>
               <!--Delete comment-->
-              <% if comment.user_id==current_user.id %>
+              <% if current_user && comment.user_id==current_user.id %>
               <p>
                 <%= link_to 'Remove review', [comment.hotel, comment],
                 method: :delete,
