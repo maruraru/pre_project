@@ -9,10 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <div class="wrap">
+      <div class="allContent">
+
     <div class="noticeEmail">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p></div>
     <%= yield %>
+  </div>
 <footer>
     <div class="contain">
       <div class="container">
@@ -27,6 +31,7 @@
         </div>
       </div>
 </footer>
+</div>
 
 
 
