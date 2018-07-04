@@ -10,7 +10,7 @@
           - if user_signed_in?
             = link_to 'Add hotel', new_hotel_path
         - if user_signed_in?
-          .col-md-1
+          .col-md-1.name
             %span
               Welcome, #{current_user.username}
           .col-md-1
