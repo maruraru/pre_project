@@ -1,9 +1,7 @@
-
 * {
 	margin: 0px;
 	padding: 0px;
 }
-
 .contain {
 	width: 1170px;
 	margin-left: auto;
@@ -45,14 +43,12 @@
 	width: 200px;
 }
 /*---------------------------------------------------------------Buttons-------------------*/
-
 .btnReg {
 	border-color: #097718;
 	color: #097718 !important;
 	background-color: #fff;
 
 }
-/*-------------------------------------search----------------------------------------------------*/
 .description {
 	color: white;
 	text-align: center;
@@ -62,7 +58,6 @@
 		font-size: 40px;
 	}
 }
-
 .search {
 	display: flex;
 	justify-content: center;
@@ -80,9 +75,6 @@
 		}
 	}
 }
-
-/*--------------------------------------------Slider----------------------------------------------*/
-
 .slider {
 	background-image: image-url("slider.jpg");
 	background-size: cover;
@@ -90,8 +82,6 @@
 	height: 500px;
 	margin-bottom: 50px;
 }
-
-/*----------------------------------------------TopHotels-----------------------------------------*/
 .raitingShow{
 	padding-left: 20px;
 }
@@ -117,76 +107,6 @@ hr {
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
-
-/*------------------------------------------Rating----------------------------------------------------------*/
-
-.rating {
-	float: left;
-	&:not(:checked) > {
-		input {
-			position: absolute;
-			top: -9999px;
-			clip: rect(0, 0, 0, 0);
-		}
-		label {
-			float: right;
-			width: 1em;
-			padding: 0 .1em;
-			overflow: hidden;
-			white-space: nowrap;
-			cursor: pointer;
-			font-size: 200%;
-			line-height: 1.2;
-			color: #ddd;
-			text-shadow: 1px 1px #bbb, 2px 2px #666, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
-			&:before {
-				content: '★';
-			}
-			&:hover {
-				color: gold;
-				text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
-				~ label {
-					color: gold;
-					text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
-				}
-			}
-		}
-	}
-	> {
-		input:checked {
-			+ label:hover, ~ label:hover {
-				color: #ea0;
-				text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
-				~ label {
-					color: #ea0;
-					text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
-				}
-			}
-		}
-		label {
-			&:hover ~ input:checked ~ label {
-				color: #ea0;
-				text-shadow: 1px 1px goldenrod, 2px 2px #B57340, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
-			}
-			&:active {
-				position: relative;
-				top: 2px;
-				left: 2px;
-			}
-		}
-	}
-}
-
-/* Конструкция :not(:checked) работает как фильтр, чтобы браузеры, которые не поддерживают псевдокласс :checked не применяли эти свойства. Все браузеры, поддерживающие псевдокласс :checked, поддерживают и псевдокласс :not(), так что фильтр должен отработать правильно. */
-
-/*
-.rating > input:checked ~ label {
-	color: #f70;
-	text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
-}
-*/
-
-/*------------------------------------------------------------------------*/
 
 .reviewsMain {
 	img {
@@ -234,9 +154,6 @@ flex-grow: 0;
 		font-size: 10px;
 	}
 }
-
-/*-----------------------------------EnterPage---------------------------------------------------------*/
-
 .EnterPageBg {
 	background-image: image-url('signin.jpeg');
 	background-size: cover;
@@ -269,11 +186,18 @@ flex-grow: 0;
 	h1 {
 		text-align: center;
 	}
+	li{
+		color: gray;
+		font-size: 14px;
+		font-style: italic;
+	}
+	h5{
+		color: red;
+	}
 }
 .gray{
 	color: gray
 }
-/*-------------------------------------------------------Add hotel ----------------------*/
 .hotelInfo{
 	padding-left: 30px;
 	background:linear-gradient(to bottom, #fff, #e8f6f7, #fff) ;
@@ -289,7 +213,7 @@ flex-grow: 0;
 	text-shadow: 1px 1px 2px black, 0 0 1em yellow;
 }
 .addHotel {
-	background-image: image-url('addHotel.jpeg');
+	background-image: linear-gradient(to bottom, #fff, #b3f99d, #fff);;
 	background-size: cover;
 	width: 100%;
 	padding-top: 30px;
@@ -297,7 +221,6 @@ flex-grow: 0;
 
 
 }
-
 .addingForm {
 	background-color: #f0f0f0;
 	padding: 40px;
@@ -308,16 +231,10 @@ flex-grow: 0;
 	width: 600px;
 	font-size: 14px;
 }
-
-/*------------------------Registration Page-----------------------------------------------*/
-
 .regPageBg {
 	background-image: image-url('signup.jpeg');
 	background-size: cover;
 	width: 100%;
-
-
-
 }
 input[type="text"], textarea, input[type="number"]{
 	display: block;
@@ -333,41 +250,41 @@ input[type="text"], textarea, input[type="number"]{
 	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .writeReview {
-	background: linear-gradient(to bottom, #fff, #b3f99d, #f0f0f0); }
-	.writeReview .reviewDescr {
+	background: linear-gradient(to bottom, #fff, #b3f99d, #f0f0f0); 
+    .reviewDescr {
 		padding-top: 150px;
-		text-align: center; }
-		.writeReview .reviewDescr p {
-			color: gray; }
-			.writeReview .registrationBlock {
-				margin-bottom: 50px; }
+		text-align: center; 
+        p {
+			color: gray; }}
+	 .registrationBlock {
+				margin-bottom: 50px; }}
 
 .mockup {
-text-align:center;
-background:linear-gradient(to bottom, #fff, #e8f6f7, #fff) ;;
-img{
-	height: 500px;
-	width: 800px;
+	text-align:center;
+	background:linear-gradient(to bottom, #fff, #e8f6f7, #fff) ;
+	img{
+		height: 500px;
+		width: 800px;
+	}
+    .advantages{
+		span{
+			color: gray;
+		}
+		.bigAdvantage{
+			font-size: 30px;
+			color: black;
+		}
+		.col-md-3{
+			
+			border-right:1px solid gray;
+		}
+    }      
 }
-.advantages{
-	
-	span{
-		color: gray;
-	}
-	.bigAdvantage{
-		font-size: 30px;
-		color: black;
-	}
-	.col-md-3{
-		
-		border-right:1px solid gray;
-	}
-}}
 
 .noticeEmail{
 	position: fixed;
 	top: 0px;
-
+	color: green;
 }
 .forgotPassw{
 	margin-top: 30px;
@@ -382,7 +299,6 @@ img{
 }
 .forgotBg{
 	background: linear-gradient(to bottom, #fff, #b3f99d, #fff); 
-
 	padding-top: 30px;
 }
 .wrap {
@@ -400,4 +316,7 @@ html, body {
 }
 .name{
 	overflow: hidden;
+}
+.ifRated{
+	text-align:center;
 }
