@@ -10,81 +10,75 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_181_014_205_757) do
+ActiveRecord::Schema.define(version: 2018_10_14_205757) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'comments', force: :cascade do |t|
-    t.text 'comment'
-    t.float 'localrate'
-    t.bigint 'user_id'
-    t.bigint 'hotel_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['hotel_id'], name: 'index_comments_on_hotel_id'
-    t.index ['user_id'], name: 'index_comments_on_user_id'
+  create_table "comments", force: :cascade do |t|
+    t.text "comment"
+    t.float "localrate"
+    t.bigint "user_id"
+    t.bigint "hotel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_comments_on_hotel_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table 'hotels', force: :cascade do |t|
-    t.string 'title'
-    t.text 'photo'
-    t.boolean 'breakfast'
-    t.float 'raiting'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "hotels", force: :cascade do |t|
+    t.string "title"
+    t.text "photo"
+    t.boolean "breakfast"
+    t.float "raiting"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'locations', force: :cascade do |t|
-    t.string 'country'
-    t.string 'state'
-    t.string 'city'
-    t.string 'street'
-    t.string 'house'
-    t.bigint 'hotel_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['hotel_id'], name: 'index_locations_on_hotel_id'
+  create_table "locations", force: :cascade do |t|
+    t.string "country"
+    t.string "state"
+    t.string "city"
+    t.string "street"
+    t.string "house"
+    t.bigint "hotel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_locations_on_hotel_id"
   end
 
-  create_table 'rooms', force: :cascade do |t|
-    t.string 'roomtype'
-    t.float 'price'
-    t.text 'description'
-    t.bigint 'hotel_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['hotel_id'], name: 'index_rooms_on_hotel_id'
+  create_table "rooms", force: :cascade do |t|
+    t.string "roomtype"
+    t.float "price"
+    t.text "description"
+    t.bigint "hotel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.text 'photo'
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.integer 'sign_in_count', default: 0, null: false
-    t.datetime 'current_sign_in_at'
-    t.datetime 'last_sign_in_at'
-    t.inet 'current_sign_in_ip'
-    t.inet 'last_sign_in_ip'
-    t.string 'confirmation_token'
-    t.datetime 'confirmed_at'
-    t.datetime 'confirmation_sent_at'
-    t.string 'unconfirmed_email'
-    t.integer 'failed_attempts', default: 0, null: false
-    t.string 'unlock_token'
-    t.datetime 'locked_at'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'username'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
-    t.index ['username'], name: 'index_users_on_username', unique: true
+  create_table "users", force: :cascade do |t|
+    t.text "photo"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key 'comments', 'hotels'
-  add_foreign_key 'comments', 'users'
-  add_foreign_key 'locations', 'hotels'
-  add_foreign_key 'rooms', 'hotels'
+  add_foreign_key "comments", "hotels"
+  add_foreign_key "comments", "users"
+  add_foreign_key "locations", "hotels"
+  add_foreign_key "rooms", "hotels"
 end
