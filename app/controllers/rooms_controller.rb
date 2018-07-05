@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = @hotel.rooms.build(room_params)
+    @room.save
     redirect_to edit_hotel_path(@hotel)
   end
 
