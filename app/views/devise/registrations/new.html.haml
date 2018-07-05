@@ -6,10 +6,19 @@
           %h2 Make your choice with us
           %p At HOTEL BROWSER, we believe in the power of travel — and in helping you make the most of every trip. With over  million candid traveler reviews, we can help you make the right choice when you shop for hotels attractions.
         .col-md-6
-          #registration.registrationBlock
+          .registrationBlock
             %h2 Please sign up
             = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
               = f.error_notification
+              - if resource.errors.any?
+                #error_explanation
+                  %h2
+                    = pluralize(resource.errors.count, "error")
+                    prohibited
+                    this article from being saved:
+                  %ul
+                    - resource.errors.full_messages.each do |msg|
+                      %li= msg
               .form-inputs
                 = f.label :username
                 %br/
