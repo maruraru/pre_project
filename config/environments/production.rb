@@ -1,4 +1,6 @@
 Rails.application.configure do
+  # Verifies that versions and hashed value of the package contents in the project's package.json
+  config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -64,6 +66,23 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "pre_project_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = {:host => 'avimarunaigo.herokuapp.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "avimarunaigo.herokuapp.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: "katarullosan@gmail.com",
+  password: "Kord12A2"
+  }
+
+
 
   # config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
   # config.action_mailer.delivery_method = :smtp
