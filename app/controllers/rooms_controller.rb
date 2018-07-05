@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = @hotel.rooms.build(room_params)
-    redirect_to edit_hotel_path(@hotel) if @room.save
+    redirect_to edit_hotel_path(@hotel)
   end
 
   def destroy
