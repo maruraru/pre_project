@@ -99,7 +99,7 @@
 - if user_signed_in?
   - if @hotel.comments.exists?(user_id: "#{current_user.id}")
     %hr/
-    %h4
+    %p.gray.ifRated
       You have already rated. If your opinion has changed,
       delete the old comment please.
     %hr/

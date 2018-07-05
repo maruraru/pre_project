@@ -12,7 +12,7 @@
               = f.error_notification
               - if resource.errors.any?
                 #error_explanation
-                  %h2
+                  %h5
                     = pluralize(resource.errors.count, "error")
                     prohibited
                     this article from being saved:
