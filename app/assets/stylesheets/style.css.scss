@@ -1,0 +1,322 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.contain {
+	width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header {
+	text-align: center;
+	height: 80px;
+	margin-top: 20px;
+}
+.goTo{
+	a{
+		line-height: 1;
+		display: inline-block;
+		color: gray;
+		text-decoration:none;
+		cursor: pointer;
+		text-transform: uppercase;
+		padding-left: 15px;
+	}
+	a:after {
+		background-color: gray;
+		display: block;
+		content: "";
+		height: 2px;
+		width: 0%;
+		-webkit-transition: width .3s ease-in-out;
+		-moz--transition: width .3s ease-in-out;
+		transition: width .3s ease-in-out;
+	}
+	a:hover:after,
+	a:focus:after {
+		width: 100%;
+	}
+}
+
+#logo {
+	width: 200px;
+}
+/*---------------------------------------------------------------Buttons-------------------*/
+.btnReg {
+	border-color: #097718;
+	color: #097718 !important;
+	background-color: #fff;
+
+}
+.description {
+	color: white;
+	text-align: center;
+	padding-top: 150px;
+	h1 {
+		font-weight: bold;
+		font-size: 40px;
+	}
+}
+.search {
+	display: flex;
+	justify-content: center;
+	input {
+		&[type="text"] {
+			width: 600px;
+			height: 50px;
+			border-radius: 10px;
+			display: inline
+		}
+		&[type="submit"] {
+			height: 50px;
+			border-radius: 10px;
+			display: inline;
+		}
+	}
+}
+.slider {
+	background-image: image-url("slider.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 500px;
+	margin-bottom: 50px;
+}
+.raitingShow{
+	padding-left: 20px;
+}
+.topHotels {
+	margin-bottom: 50px;
+	h2{
+		text-align: center;
+		margin-bottom: 30px;
+		font-weight: bold;
+	}
+	img {
+		width: 400px;
+		height: 250px;
+		
+	}
+	.row {
+		margin-bottom: 5px;
+	}
+}
+
+hr {
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.reviewsMain {
+	img {
+		border-radius: 50%;
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+		align-items: center;
+
+	}
+	background-color: #f0f0f0;
+	p {
+		color: gray;
+		font-size: 14px;
+	}
+	h4 {
+		font-weight: bold;
+		font-size: 20px;
+	}
+	h2{
+		font-weight: bold;
+		text-align:center;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+.reviewAuthor{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+footer {
+	background-color: #98a4b7;
+	height: 50px;
+flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+
+
+
+	img {
+		height: 50px;
+	}
+	span {
+		font-size: 10px;
+	}
+}
+.EnterPageBg {
+	background-image: image-url('signin.jpeg');
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+
+}
+
+.enterDesc {
+	padding-top: 100px;
+	text-align: center;
+	p {
+		color: gray;
+	}
+	h2 {
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
+.registrationBlock {
+	margin-top: 30px;
+	padding: 60px;
+	background-color: #f0f0f0;
+	float: right;
+	width: 500px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	margin-bottom: 30px;
+	h1 {
+		text-align: center;
+	}
+	li{
+		color: gray;
+		font-size: 14px;
+		font-style: italic;
+	}
+	h5{
+		color: red;
+	}
+}
+.gray{
+	color: gray
+}
+.hotelInfo{
+	padding-left: 30px;
+	background:linear-gradient(to bottom, #fff, #e8f6f7, #fff) ;
+	h1{
+		text-align:center;
+	}
+}
+.raiting{
+	display: inline;
+	color: #ffd344;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px black, 0 0 1em yellow;
+}
+.addHotel {
+	background-image: linear-gradient(to bottom, #fff, #b3f99d, #fff);;
+	background-size: cover;
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+
+}
+.addingForm {
+	background-color: #f0f0f0;
+	padding: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	width: 600px;
+	font-size: 14px;
+}
+.regPageBg {
+	background-image: image-url('signup.jpeg');
+	background-size: cover;
+	width: 100%;
+}
+input[type="text"], textarea, input[type="number"]{
+	display: block;
+	width: 100%;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.writeReview {
+	background: linear-gradient(to bottom, #fff, #b3f99d, #f0f0f0); 
+    .reviewDescr {
+		padding-top: 150px;
+		text-align: center; 
+        p {
+			color: gray; }}
+	 .registrationBlock {
+				margin-bottom: 50px; }}
+
+.mockup {
+	text-align:center;
+	background:linear-gradient(to bottom, #fff, #e8f6f7, #fff) ;
+	img{
+		height: 500px;
+		width: 800px;
+	}
+    .advantages{
+		span{
+			color: gray;
+		}
+		.bigAdvantage{
+			font-size: 30px;
+			color: black;
+		}
+		.col-md-3{
+			
+			border-right:1px solid gray;
+		}
+    }      
+}
+
+.noticeEmail{
+	position: fixed;
+	top: 0px;
+	color: green;
+}
+.forgotPassw{
+	margin-top: 30px;
+	padding: 60px;
+	background-color: #f0f0f0;
+	margin-right: auto;
+	margin-left: auto;
+	width: 500px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	margin-bottom: 50px;
+}
+.forgotBg{
+	background: linear-gradient(to bottom, #fff, #b3f99d, #fff); 
+	padding-top: 30px;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.allContent{
+	flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+html, body {
+  height: 100%;
+}
+.name{
+	overflow: hidden;
+}
+.ifRated{
+	text-align:center;
+}
